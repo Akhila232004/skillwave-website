@@ -82,13 +82,3 @@ Layouts, typography, navigation, cards and content sections are adapted for smal
 
 ---
 
-# 🗺️ Website Pages
-
-The website contains multiple pages, with each page using a different visual structure rather than repeating the same layout.
-
-## 1. Home
-
-Route:
-
-```text
-/
