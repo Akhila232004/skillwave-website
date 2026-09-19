@@ -1,0 +1,927 @@
+.page {
+  position: relative;
+
+  width: 100%;
+  height: 100svh;
+  min-height: 600px;
+
+  overflow: hidden;
+
+  background: #070812;
+
+  color: #ffffff;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.glowOne,
+.glowTwo {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  opacity: 0.32;
+}
+
+.glowOne {
+  width: 400px;
+  height: 400px;
+
+  left: -170px;
+  top: 12%;
+
+  background: rgba(72, 106, 255, 0.2);
+}
+
+.glowTwo {
+  width: 390px;
+  height: 390px;
+
+  right: -180px;
+  bottom: -80px;
+
+  background: rgba(175, 76, 255, 0.19);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.15;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1080px, calc(100% - 72px));
+
+  height: calc(100svh - 64px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    0.8fr;
+
+  align-items: center;
+
+  gap: 80px;
+
+  padding: 20px 0;
+}
+
+
+/* =========================================================
+   BRAND SIDE
+   ========================================================= */
+
+.brandSide {
+  min-width: 0;
+}
+
+.brandLabel {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 8px;
+}
+
+.brandLabel span {
+  color: #8795ff;
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.6px;
+}
+
+.brandLabel i {
+  width: 28px;
+  height: 2px;
+
+  border-radius: 99px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6685ff,
+      #a95cff
+    );
+}
+
+.brandSide h1 {
+  margin: 0;
+
+  font-size: clamp(50px, 6vw, 82px);
+
+  line-height: 0.86;
+
+  letter-spacing: -0.075em;
+
+  font-weight: 900;
+}
+
+.brandSide h1 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7092ff,
+      #a963ff,
+      #ff68a8
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.brandSide > p {
+  max-width: 450px;
+
+  margin: 14px 0 0;
+
+  color: rgba(183, 191, 214, 0.62);
+
+  font-size: 10px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   VISUAL
+   ========================================================= */
+
+.brandVisual {
+  position: relative;
+
+  width: 410px;
+  height: 180px;
+
+  margin-top: 20px;
+}
+
+.visualRing {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(121, 140, 255, 0.2);
+
+  transform: rotate(-18deg);
+}
+
+.ringOne {
+  width: 340px;
+  height: 130px;
+
+  left: 30px;
+  top: 20px;
+}
+
+.ringTwo {
+  width: 260px;
+  height: 100px;
+
+  left: 70px;
+  top: 35px;
+
+  border-color:
+    rgba(182, 93, 255, 0.25);
+
+  transform: rotate(28deg);
+}
+
+.visualCore {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 72px;
+  height: 72px;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(104, 126, 255, 0.24),
+      rgba(104, 126, 255, 0.03)
+    );
+
+  border:
+    1px solid rgba(135, 151, 255, 0.5);
+
+  box-shadow:
+    0 0 0 7px rgba(7, 8, 18, 0.75),
+    0 0 40px rgba(101, 122, 255, 0.2);
+}
+
+.visualCore strong {
+  font-size: 18px;
+
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.visualCore span {
+  margin-top: 4px;
+
+  color: rgba(178, 187, 211, 0.4);
+
+  font-size: 4px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.floatingTag {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 7px;
+
+  background:
+    rgba(10, 12, 25, 0.75);
+
+  color: rgba(206, 212, 230, 0.58);
+
+  font-size: 5px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.6px;
+
+  backdrop-filter: blur(12px);
+}
+
+.floatingTag span {
+  color: #8997ff;
+
+  font-size: 5px;
+}
+
+.tagOne {
+  left: 0;
+  top: 35px;
+}
+
+.tagTwo {
+  right: 0;
+  top: 22px;
+}
+
+.tagThree {
+  left: 20px;
+  bottom: 18px;
+}
+
+
+/* =========================================================
+   FORM SIDE
+   ========================================================= */
+
+.formSide {
+  min-width: 0;
+}
+
+.formCard {
+  width: 100%;
+
+  padding: 21px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.28);
+
+  backdrop-filter: blur(25px);
+}
+
+
+/* =========================================================
+   FORM HEADER
+   ========================================================= */
+
+.formHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-bottom: 14px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.formHeader small {
+  color: #8d9aff;
+
+  font-size: 6px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.4px;
+}
+
+.formHeader h2 {
+  margin: 5px 0 0;
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -0.055em;
+}
+
+.formHeader > span {
+  color: rgba(158, 168, 195, 0.3);
+
+  font-size: 12px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.formCard form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+
+  padding-top: 15px;
+}
+
+.formCard label > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: rgba(195, 201, 219, 0.63);
+
+  font-size: 7px;
+
+  font-weight: 800;
+}
+
+.formCard input[type="email"],
+.formCard input[type="password"],
+.formCard input[type="text"] {
+  width: 100%;
+
+  height: 39px;
+
+  padding: 0 10px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 8px;
+
+  outline: none;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  color: #ffffff;
+
+  font-size: 8px;
+
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.formCard input::placeholder {
+  color: rgba(146, 157, 184, 0.32);
+}
+
+.formCard input:focus {
+  border-color:
+    rgba(123, 139, 255, 0.55);
+
+  background:
+    rgba(104, 120, 255, 0.055);
+
+  box-shadow:
+    0 0 0 3px rgba(101, 121, 255, 0.08);
+}
+
+
+/* Password */
+
+.passwordField {
+  position: relative;
+}
+
+.passwordField input {
+  padding-right: 52px !important;
+}
+
+.passwordToggle {
+  position: absolute;
+
+  right: 7px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  padding: 4px;
+
+  background: transparent;
+
+  color: rgba(157, 170, 204, 0.5);
+
+  cursor: pointer;
+
+  font-size: 5px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   FORM OPTIONS
+   ========================================================= */
+
+.formOptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: -2px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.remember input {
+  width: 10px;
+  height: 10px;
+
+  margin: 0;
+
+  accent-color: #7a83ff;
+}
+
+.remember span {
+  margin: 0 !important;
+
+  color: rgba(166, 176, 200, 0.48) !important;
+
+  font-size: 6px !important;
+}
+
+.forgot {
+  padding: 0;
+
+  background: transparent;
+
+  color: #9d83ff;
+
+  cursor: pointer;
+
+  font-size: 6px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   SUBMIT
+   ========================================================= */
+
+.submit {
+  width: 100%;
+
+  min-height: 40px;
+
+  margin-top: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #5b7fff,
+      #a455ff
+    );
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 10px 30px rgba(101, 82, 255, 0.23);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.submit:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 36px rgba(105, 82, 255, 0.34);
+}
+
+.submit span {
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   CREATE ACCOUNT
+   ========================================================= */
+
+.divider {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin: 17px 0 9px;
+}
+
+.divider span {
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.07);
+}
+
+.divider small {
+  color: rgba(151, 161, 187, 0.35);
+
+  font-size: 4px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.createAccount {
+  min-height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  color: rgba(218, 222, 234, 0.7);
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.createAccount:hover {
+  background:
+    rgba(255, 255, 255, 0.06);
+
+  border-color:
+    rgba(144, 125, 255, 0.25);
+}
+
+.createAccount span {
+  color: #a66aff;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .content {
+    width: calc(100% - 42px);
+
+    gap: 40px;
+  }
+
+  .brandSide h1 {
+    font-size: 60px;
+  }
+
+  .brandVisual {
+    width: 330px;
+  }
+
+  .ringOne {
+    width: 290px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .content {
+    width: calc(100% - 20px);
+
+    height: calc(100svh - 56px);
+
+    grid-template-columns: 1fr;
+
+    grid-template-rows: auto 1fr;
+
+    align-items: stretch;
+
+    gap: 8px;
+
+    padding: 12px 0 9px;
+  }
+
+  .brandLabel {
+    margin-bottom: 5px;
+  }
+
+  .brandLabel span {
+    font-size: 5px;
+  }
+
+  .brandSide h1 {
+    font-size: clamp(30px, 8.5vw, 43px);
+
+    line-height: 0.9;
+  }
+
+  .brandSide > p {
+    margin-top: 6px;
+
+    font-size: 7px;
+
+    line-height: 1.3;
+  }
+
+  .brandVisual {
+    display: none;
+  }
+
+  .formCard {
+    height: 100%;
+
+    padding: 10px;
+
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .formHeader {
+    padding-bottom: 7px;
+  }
+
+  .formHeader small {
+    font-size: 4px;
+  }
+
+  .formHeader h2 {
+    margin-top: 3px;
+
+    font-size: 19px;
+  }
+
+  .formHeader > span {
+    font-size: 8px;
+  }
+
+  .formCard form {
+    gap: 7px;
+
+    padding-top: 8px;
+  }
+
+  .formCard label > span {
+    margin-bottom: 3px;
+
+    font-size: 5px;
+  }
+
+  .formCard input[type="email"],
+  .formCard input[type="password"],
+  .formCard input[type="text"] {
+    height: 32px;
+
+    padding: 0 8px;
+
+    border-radius: 6px;
+
+    font-size: 7px;
+  }
+
+  .passwordToggle {
+    font-size: 4px;
+  }
+
+  .formOptions {
+    margin-top: 0;
+  }
+
+  .remember span,
+  .forgot {
+    font-size: 5px !important;
+  }
+
+  .submit {
+    min-height: 33px;
+
+    margin-top: 2px;
+
+    border-radius: 7px;
+
+    font-size: 7px;
+  }
+
+  .submit span {
+    font-size: 10px;
+  }
+
+  .divider {
+    margin: 9px 0 6px;
+  }
+
+  .divider small {
+    font-size: 3.5px;
+  }
+
+  .createAccount {
+    min-height: 29px;
+
+    border-radius: 6px;
+
+    font-size: 6px;
+  }
+
+  .createAccount span {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   SMALL ANDROID
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .content {
+    width: calc(100% - 16px);
+
+    padding-top: 10px;
+  }
+
+  .brandSide h1 {
+    font-size: 29px;
+  }
+
+  .brandSide > p {
+    font-size: 6px;
+  }
+
+  .formCard {
+    padding: 8px;
+  }
+
+  .formCard form {
+    gap: 6px;
+  }
+
+  .formCard input[type="email"],
+  .formCard input[type="password"],
+  .formCard input[type="text"] {
+    height: 29px;
+
+    font-size: 6px;
+  }
+
+  .submit {
+    min-height: 30px;
+
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .quickLinks a,
+  .submit,
+  .createAccount {
+    transition: none;
+  }
+}

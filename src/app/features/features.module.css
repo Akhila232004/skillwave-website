@@ -1,0 +1,509 @@
+.page {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 600px;
+  overflow: hidden;
+  background: #090a12;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blobOne,
+.blobTwo,
+.blobThree {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+.blobOne {
+  width: 450px;
+  height: 450px;
+  top: -230px;
+  left: -150px;
+  background: rgba(43, 101, 255, 0.25);
+}
+
+.blobTwo {
+  width: 420px;
+  height: 420px;
+  top: 20%;
+  right: -190px;
+  background: rgba(194, 49, 255, 0.2);
+}
+
+.blobThree {
+  width: 380px;
+  height: 380px;
+  bottom: -250px;
+  left: 35%;
+  background: rgba(255, 62, 139, 0.16);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  height: calc(100svh - 64px);
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 5vw 10px;
+  display: grid;
+  grid-template-rows: auto 1fr 42px;
+  gap: 13px;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  align-items: end;
+  gap: 35px;
+}
+
+.introLabel {
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #8991aa;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+}
+
+.introLabel span {
+  color: #ffffff;
+  font-size: 10px;
+}
+
+.intro h1 {
+  margin: 7px 0 0;
+  font-size: clamp(45px, 5.4vw, 78px);
+  line-height: 0.88;
+  letter-spacing: -4px;
+  font-weight: 900;
+}
+
+.intro h1 span {
+  background: linear-gradient(
+    90deg,
+    #5f8dff,
+    #a85cff,
+    #ff5ba9
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.intro p {
+  max-width: 510px;
+  margin: 0 0 4px;
+  color: #a9aec0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.featureWall {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 11px;
+}
+
+.card {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  padding: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 21px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  text-decoration: none;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.045);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.featured {
+  grid-row: span 2;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardHeader > span {
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.cardHeader i {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.cardHeader b {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.cardContent small {
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1.7px;
+  opacity: 0.68;
+}
+
+.cardContent h2 {
+  margin: 5px 0 6px;
+  font-size: clamp(25px, 2.3vw, 39px);
+  line-height: 0.94;
+  letter-spacing: -1.5px;
+  font-weight: 900;
+}
+
+.featured .cardContent h2 {
+  font-size: clamp(35px, 3.8vw, 57px);
+}
+
+.cardContent p {
+  max-width: 440px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.cardLine {
+  height: 3px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.cardLine span {
+  display: block;
+  width: 45%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.blue {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(47, 113, 255, 0.55), transparent 42%),
+    rgba(255, 255, 255, 0.045);
+}
+
+.blue .cardHeader i {
+  background: linear-gradient(135deg, #3971ff, #38cfff);
+}
+
+.blue .cardLine span {
+  background: #4e9aff;
+}
+
+.violet {
+  background:
+    radial-gradient(circle at 85% 15%, rgba(157, 57, 255, 0.5), transparent 42%),
+    rgba(255, 255, 255, 0.045);
+}
+
+.violet .cardHeader i {
+  background: linear-gradient(135deg, #854bff, #d04cff);
+}
+
+.violet .cardLine span {
+  background: #a461ff;
+}
+
+.pink {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255, 64, 142, 0.5), transparent 42%),
+    rgba(255, 255, 255, 0.045);
+}
+
+.pink .cardHeader i {
+  background: linear-gradient(135deg, #ff4b91, #ff6974);
+}
+
+.pink .cardLine span {
+  background: #ff5f9e;
+}
+
+.orange {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255, 128, 46, 0.45), transparent 42%),
+    rgba(255, 255, 255, 0.045);
+}
+
+.orange .cardHeader i {
+  background: linear-gradient(135deg, #ff7535, #ffc34e);
+}
+
+.orange .cardLine span {
+  background: #ff9a3e;
+}
+
+.green {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(24, 205, 149, 0.4), transparent 42%),
+    rgba(255, 255, 255, 0.045);
+}
+
+.green .cardHeader i {
+  background: linear-gradient(135deg, #19c897, #62e68a);
+}
+
+.green .cardLine span {
+  background: #42dda1;
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bottomText {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bottomText strong {
+  font-size: 15px;
+}
+
+.bottomText span {
+  color: #777f96;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+}
+
+.bottomMessage {
+  text-align: center;
+  color: #969db1;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.bottom > a {
+  justify-self: end;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.bottom > a span {
+  margin-left: 7px;
+  color: #9c6cff;
+  font-size: 15px;
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 900px) {
+  .content {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .intro {
+    grid-template-columns: 1fr 0.8fr;
+  }
+
+  .intro h1 {
+    font-size: clamp(42px, 6vw, 60px);
+  }
+
+  .featureWall {
+    gap: 8px;
+  }
+
+  .card {
+    padding: 13px;
+    border-radius: 16px;
+  }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+  .page {
+    min-height: 0;
+  }
+
+  .content {
+    height: calc(100svh - 56px);
+    padding: 12px 12px 7px;
+    grid-template-rows: auto 1fr 31px;
+    gap: 8px;
+  }
+
+  .intro {
+    display: block;
+  }
+
+  .introLabel {
+    font-size: 7px;
+    letter-spacing: 1.2px;
+  }
+
+  .introLabel span {
+    font-size: 8px;
+  }
+
+  .intro h1 {
+    margin-top: 5px;
+    font-size: clamp(36px, 11.5vw, 53px);
+    letter-spacing: -2.5px;
+    line-height: 0.88;
+  }
+
+  .intro p {
+    margin-top: 7px;
+    font-size: 10px;
+    line-height: 1.3;
+  }
+
+  .featureWall {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 7px;
+  }
+
+  .featured {
+    grid-row: auto;
+  }
+
+  .card {
+    padding: 10px;
+    border-radius: 13px;
+  }
+
+  .cardHeader > span {
+    font-size: 7px;
+  }
+
+  .cardHeader i {
+    width: 27px;
+    height: 27px;
+    border-radius: 8px;
+    font-size: 13px;
+  }
+
+  .cardHeader b {
+    font-size: 13px;
+  }
+
+  .cardContent small {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+
+  .cardContent h2,
+  .featured .cardContent h2 {
+    margin: 3px 0;
+    font-size: clamp(17px, 5.1vw, 23px);
+    letter-spacing: -0.8px;
+  }
+
+  .cardContent p {
+    display: none;
+  }
+
+  .cardLine {
+    height: 2px;
+  }
+
+  .bottom {
+    grid-template-columns: 1fr auto;
+  }
+
+  .bottomText strong {
+    font-size: 11px;
+  }
+
+  .bottomText span {
+    font-size: 6px;
+  }
+
+  .bottomMessage {
+    display: none;
+  }
+
+  .bottom > a {
+    font-size: 8px;
+  }
+
+  .bottom > a span {
+    font-size: 12px;
+  }
+}
+
+/* ---------- SMALL ANDROID ---------- */
+
+@media (max-width: 390px) {
+  .content {
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  .intro h1 {
+    font-size: 35px;
+  }
+
+  .intro p {
+    font-size: 9px;
+  }
+
+  .featureWall {
+    gap: 5px;
+  }
+
+  .card {
+    padding: 8px;
+  }
+
+  .cardHeader i {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+  }
+
+  .cardContent h2,
+  .featured .cardContent h2 {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,1372 @@
+.page {
+  position: relative;
+
+  width: 100%;
+  height: 100svh;
+  min-height: 600px;
+
+  overflow: hidden;
+
+  background: #070812;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
+
+.background {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.glowBlue,
+.glowPurple,
+.glowPink {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(85px);
+
+  opacity: 0.38;
+}
+
+.glowBlue {
+  width: 300px;
+  height: 300px;
+
+  left: -120px;
+  top: 15%;
+
+  background: rgba(73, 105, 255, 0.22);
+}
+
+.glowPurple {
+  width: 340px;
+  height: 340px;
+
+  right: -150px;
+  top: 25%;
+
+  background: rgba(166, 78, 255, 0.18);
+}
+
+.glowPink {
+  width: 200px;
+  height: 200px;
+
+  left: 42%;
+  bottom: -100px;
+
+  background: rgba(255, 83, 169, 0.12);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.2;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 55px 55px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1280px, calc(100% - 72px));
+
+  height: calc(100svh - 64px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-rows:
+    auto
+    minmax(0, 1fr)
+    auto;
+
+  gap: 12px;
+
+  padding: 21px 0 15px;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.heading {
+  max-width: 720px;
+}
+
+.headingLabel {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 7px;
+}
+
+.headingLabel span {
+  color: #8492ff;
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+.headingLabel i {
+  width: 28px;
+  height: 2px;
+
+  border-radius: 99px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6484ff,
+      #a55cff
+    );
+}
+
+.headingLabel small {
+  color: rgba(176, 184, 207, 0.4);
+
+  font-size: 6px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.heading h1 {
+  margin: 0;
+
+  font-size: clamp(38px, 4vw, 62px);
+
+  line-height: 0.91;
+
+  letter-spacing: -0.065em;
+
+  font-weight: 900;
+}
+
+.heading h1 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6e91ff,
+      #a965ff,
+      #ff66a9
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.heading p {
+  max-width: 610px;
+
+  margin: 9px 0 0;
+
+  color: rgba(183, 191, 214, 0.62);
+
+  font-size: 10px;
+
+  line-height: 1.45;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   COMMAND CENTER
+   ========================================================= */
+
+.commandCenter {
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.55fr)
+    minmax(280px, 0.75fr);
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   MAP AREA
+   ========================================================= */
+
+.mapArea {
+  position: relative;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.085);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.18);
+
+  backdrop-filter: blur(20px);
+}
+
+.mapHeader {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 14px;
+  left: 15px;
+  right: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mapHeader div {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+}
+
+.mapHeader small {
+  color: #8191ff;
+
+  font-size: 6px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+.mapHeader strong {
+  color: rgba(255, 255, 255, 0.45);
+
+  font-size: 6px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.mapHeader > span {
+  color: rgba(172, 181, 207, 0.35);
+
+  font-size: 6px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   LEARNING MAP
+   ========================================================= */
+
+.map {
+  position: absolute;
+
+  inset: 0;
+}
+
+.mapLines span {
+  position: absolute;
+
+  display: block;
+
+  opacity: 0.55;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(98, 126, 255, 0.05),
+      rgba(141, 105, 255, 0.65),
+      rgba(255, 91, 169, 0.1)
+    );
+}
+
+.lineHorizontal {
+  width: 65%;
+
+  height: 1px;
+
+  left: 18%;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+.lineVertical {
+  width: 1px;
+
+  height: 58%;
+
+  left: 50%;
+  top: 21%;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(100, 128, 255, 0.08),
+      rgba(155, 91, 255, 0.7),
+      rgba(255, 99, 169, 0.08)
+    ) !important;
+}
+
+.lineDiagonalOne {
+  width: 43%;
+
+  height: 1px;
+
+  left: 27%;
+  top: 38%;
+
+  transform:
+    rotate(25deg);
+}
+
+.lineDiagonalTwo {
+  width: 43%;
+
+  height: 1px;
+
+  left: 29%;
+  top: 62%;
+
+  transform:
+    rotate(-25deg);
+}
+
+
+/* =========================================================
+   CENTER NODE
+   ========================================================= */
+
+.centerNode {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 92px;
+  height: 92px;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(103, 125, 255, 0.23),
+      rgba(103, 125, 255, 0.035) 65%
+    );
+
+  border:
+    1px solid rgba(125, 143, 255, 0.5);
+
+  box-shadow:
+    0 0 0 8px rgba(7, 8, 18, 0.7),
+    0 0 45px rgba(101, 119, 255, 0.22);
+}
+
+.centerNode span {
+  font-size: 20px;
+
+  font-weight: 900;
+
+  letter-spacing: -0.08em;
+}
+
+.centerNode small {
+  margin-top: 3px;
+
+  color: rgba(191, 198, 219, 0.48);
+
+  font-size: 5px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.4px;
+}
+
+.centerPulse {
+  position: absolute;
+
+  width: 108px;
+  height: 108px;
+
+  border:
+    1px solid rgba(122, 140, 255, 0.12);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   PATH NODES
+   ========================================================= */
+
+.pathNode {
+  position: absolute;
+
+  width: 185px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  transition:
+    transform 200ms ease;
+}
+
+.pathNode:hover {
+  transform: scale(1.025);
+}
+
+.nodeCircle {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.15);
+
+  background:
+    rgba(255, 255, 255, 0.055);
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.nodeCircle span {
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+.nodeText {
+  min-width: 0;
+}
+
+.nodeText small {
+  color: rgba(160, 171, 199, 0.38);
+
+  font-size: 5px;
+
+  font-weight: 900;
+}
+
+.nodeText strong {
+  display: block;
+
+  margin-top: 1px;
+
+  font-size: 13px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -0.03em;
+}
+
+.nodeText p {
+  margin: 4px 0 0;
+
+  color: rgba(174, 183, 207, 0.48);
+
+  font-size: 6.5px;
+
+  line-height: 1.35;
+}
+
+
+/* Node positions */
+
+.node1 {
+  left: 7%;
+  top: 31%;
+}
+
+.node2 {
+  right: 5%;
+  top: 28%;
+}
+
+.node3 {
+  left: 8%;
+  bottom: 19%;
+}
+
+.node4 {
+  right: 5%;
+  bottom: 18%;
+}
+
+
+/* Node accents */
+
+.explore .nodeCircle {
+  color: #7895ff;
+
+  border-color: rgba(111, 142, 255, 0.4);
+
+  background: rgba(93, 124, 255, 0.09);
+}
+
+.understand .nodeCircle {
+  color: #b56aff;
+
+  border-color: rgba(182, 101, 255, 0.4);
+
+  background: rgba(175, 86, 255, 0.09);
+}
+
+.prepare .nodeCircle {
+  color: #ff6eac;
+
+  border-color: rgba(255, 100, 171, 0.4);
+
+  background: rgba(255, 90, 166, 0.08);
+}
+
+.revisit .nodeCircle {
+  color: #54dca6;
+
+  border-color: rgba(70, 220, 160, 0.4);
+
+  background: rgba(65, 220, 157, 0.08);
+}
+
+
+/* =========================================================
+   RESOURCE PANEL
+   ========================================================= */
+
+.resourcePanel {
+  min-width: 0;
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-rows: auto 1fr auto;
+
+  padding: 15px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.085);
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      155deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.2);
+
+  backdrop-filter: blur(20px);
+}
+
+.resourceHeading small {
+  display: block;
+
+  color: #9a72ff;
+
+  font-size: 6px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+.resourceHeading strong {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 18px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -0.04em;
+}
+
+.resourceList {
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 6px;
+
+  margin: 10px 0;
+}
+
+.resource {
+  min-height: 45px;
+
+  display: grid;
+
+  grid-template-columns:
+    23px
+    30px
+    1fr
+    20px;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 5px 7px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease;
+}
+
+.resource:hover {
+  transform: translateX(4px);
+
+  border-color:
+    rgba(145, 121, 255, 0.3);
+
+  background:
+    rgba(112, 103, 255, 0.08);
+}
+
+.resourceNumber {
+  color: rgba(139, 151, 183, 0.35);
+
+  font-size: 6px;
+
+  font-weight: 900;
+}
+
+.resourceIcon {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(99, 128, 255, 0.15),
+      rgba(173, 87, 255, 0.1)
+    );
+
+  color: #a39aff;
+
+  font-size: 12px;
+
+  font-weight: 900;
+}
+
+.resourceText strong {
+  display: block;
+
+  color: rgba(239, 241, 248, 0.9);
+
+  font-size: 9px;
+
+  font-weight: 900;
+}
+
+.resourceText span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: rgba(150, 161, 189, 0.4);
+
+  font-size: 5px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+}
+
+.resourceArrow {
+  justify-self: end;
+
+  color: rgba(174, 133, 255, 0.65);
+
+  font-size: 13px;
+}
+
+.resourceFooter {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding-top: 9px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.06);
+}
+
+.resourceFooter span {
+  color: rgba(151, 162, 190, 0.4);
+
+  font-size: 5px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.resourceFooter i {
+  flex: 1;
+
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.resourceFooter b {
+  color: rgba(179, 163, 255, 0.6);
+
+  font-size: 5px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   BOTTOM BAR
+   ========================================================= */
+
+.bottomBar {
+  min-height: 57px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding: 7px 11px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(85, 111, 255, 0.08),
+      rgba(171, 80, 255, 0.06)
+    );
+
+  backdrop-filter: blur(18px);
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.progressNumber {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #587cff,
+      #9b5cff
+    );
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 22px rgba(101, 82, 255, 0.2);
+}
+
+.progress small {
+  display: block;
+
+  color: rgba(148, 160, 188, 0.42);
+
+  font-size: 5px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.progress strong {
+  display: block;
+
+  margin-top: 3px;
+
+  color: rgba(224, 228, 239, 0.72);
+
+  font-size: 8px;
+
+  font-weight: 700;
+}
+
+.exploreButton {
+  min-height: 34px;
+
+  padding: 0 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #5b7fff,
+      #a257ff
+    );
+
+  color: #ffffff;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 9px 25px rgba(100, 83, 255, 0.2);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.exploreButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 13px 32px rgba(108, 83, 255, 0.32);
+}
+
+.exploreButton span {
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .content {
+    width: calc(100% - 42px);
+  }
+
+  .commandCenter {
+    grid-template-columns:
+      minmax(0, 1.35fr)
+      minmax(245px, 0.75fr);
+  }
+
+  .pathNode {
+    width: 150px;
+  }
+
+  .nodeText p {
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .content {
+    width: calc(100% - 20px);
+
+    height: calc(100svh - 56px);
+
+    padding: 13px 0 9px;
+
+    gap: 7px;
+  }
+
+  .heading {
+    max-width: 100%;
+  }
+
+  .headingLabel {
+    margin-bottom: 5px;
+  }
+
+  .headingLabel span {
+    font-size: 5px;
+
+    letter-spacing: 1.1px;
+  }
+
+  .headingLabel small {
+    font-size: 5px;
+  }
+
+  .heading h1 {
+    font-size: clamp(29px, 8.5vw, 42px);
+  }
+
+  .heading p {
+    margin-top: 5px;
+
+    font-size: 7px;
+
+    line-height: 1.3;
+  }
+
+  .commandCenter {
+    grid-template-columns: 1fr;
+
+    grid-template-rows: 1fr 1fr;
+
+    gap: 7px;
+  }
+
+  .mapArea {
+    border-radius: 12px;
+  }
+
+  .mapHeader {
+    top: 8px;
+    left: 9px;
+    right: 9px;
+  }
+
+  .mapHeader small,
+  .mapHeader strong,
+  .mapHeader > span {
+    font-size: 4px;
+  }
+
+  .centerNode {
+    width: 55px;
+    height: 55px;
+
+    box-shadow:
+      0 0 0 5px rgba(7, 8, 18, 0.75),
+      0 0 25px rgba(101, 119, 255, 0.18);
+  }
+
+  .centerNode span {
+    font-size: 13px;
+  }
+
+  .centerNode small {
+    font-size: 4px;
+  }
+
+  .centerPulse {
+    width: 67px;
+    height: 67px;
+  }
+
+  .pathNode {
+    width: 120px;
+
+    gap: 5px;
+  }
+
+  .nodeCircle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nodeCircle span {
+    font-size: 10px;
+  }
+
+  .nodeText small {
+    font-size: 4px;
+  }
+
+  .nodeText strong {
+    font-size: 9px;
+  }
+
+  .nodeText p {
+    margin-top: 2px;
+
+    font-size: 4.5px;
+
+    line-height: 1.2;
+  }
+
+  .node1 {
+    left: 5%;
+    top: 25%;
+  }
+
+  .node2 {
+    right: 4%;
+    top: 25%;
+  }
+
+  .node3 {
+    left: 5%;
+    bottom: 15%;
+  }
+
+  .node4 {
+    right: 4%;
+    bottom: 15%;
+  }
+
+  .resourcePanel {
+    padding: 9px;
+
+    border-radius: 12px;
+  }
+
+  .resourceHeading small {
+    font-size: 4px;
+  }
+
+  .resourceHeading strong {
+    margin-top: 2px;
+
+    font-size: 13px;
+  }
+
+  .resourceList {
+    gap: 4px;
+
+    margin: 5px 0;
+  }
+
+  .resource {
+    min-height: 29px;
+
+    grid-template-columns:
+      18px
+      24px
+      1fr
+      16px;
+
+    gap: 5px;
+
+    padding: 3px 5px;
+
+    border-radius: 7px;
+  }
+
+  .resourceNumber {
+    font-size: 4px;
+  }
+
+  .resourceIcon {
+    width: 22px;
+    height: 22px;
+
+    border-radius: 6px;
+
+    font-size: 9px;
+  }
+
+  .resourceText strong {
+    font-size: 7px;
+  }
+
+  .resourceText span {
+    font-size: 4px;
+  }
+
+  .resourceArrow {
+    font-size: 10px;
+  }
+
+  .resourceFooter {
+    padding-top: 5px;
+  }
+
+  .resourceFooter span,
+  .resourceFooter b {
+    font-size: 4px;
+  }
+
+  .bottomBar {
+    min-height: 42px;
+
+    padding: 5px 6px;
+
+    border-radius: 9px;
+
+    gap: 7px;
+  }
+
+  .progress {
+    gap: 6px;
+  }
+
+  .progressNumber {
+    width: 25px;
+    height: 25px;
+
+    border-radius: 6px;
+
+    font-size: 6px;
+  }
+
+  .progress small {
+    font-size: 4px;
+  }
+
+  .progress strong {
+    margin-top: 2px;
+
+    font-size: 6px;
+  }
+
+  .exploreButton {
+    min-height: 27px;
+
+    padding: 0 8px;
+
+    gap: 4px;
+
+    border-radius: 6px;
+
+    font-size: 6px;
+  }
+
+  .exploreButton span {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   SMALL ANDROID
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .content {
+    width: calc(100% - 16px);
+
+    padding-top: 10px;
+  }
+
+  .heading h1 {
+    font-size: 28px;
+  }
+
+  .heading p {
+    font-size: 6px;
+  }
+
+  .pathNode {
+    width: 105px;
+  }
+
+  .nodeText p {
+    display: none;
+  }
+
+  .node1 {
+    left: 3%;
+  }
+
+  .node2 {
+    right: 2%;
+  }
+
+  .node3 {
+    left: 3%;
+  }
+
+  .node4 {
+    right: 2%;
+  }
+
+  .resourcePanel {
+    padding: 7px;
+  }
+
+  .resourceHeading strong {
+    font-size: 12px;
+  }
+
+  .resource {
+    min-height: 26px;
+  }
+
+  .bottomBar {
+    min-height: 38px;
+  }
+
+  .progress strong {
+    font-size: 5.5px;
+  }
+
+  .exploreButton {
+    min-height: 25px;
+
+    padding: 0 6px;
+
+    font-size: 5.5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SHORT DESKTOP SCREENS
+   ========================================================= */
+
+@media (max-height: 680px) and (min-width: 761px) {
+  .content {
+    padding-top: 14px;
+  }
+
+  .heading h1 {
+    font-size: 50px;
+  }
+
+  .heading p {
+    margin-top: 5px;
+  }
+
+  .centerNode {
+    width: 75px;
+    height: 75px;
+  }
+
+  .centerPulse {
+    width: 88px;
+    height: 88px;
+  }
+
+  .resource {
+    min-height: 39px;
+  }
+
+  .bottomBar {
+    min-height: 50px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pathNode,
+  .resource,
+  .exploreButton {
+    transition: none;
+  }
+}

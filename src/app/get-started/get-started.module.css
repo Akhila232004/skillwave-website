@@ -1,0 +1,875 @@
+.page {
+  position: relative;
+
+  width: 100%;
+  height: 100svh;
+  min-height: 600px;
+
+  overflow: hidden;
+
+  background: #070812;
+
+  color: #ffffff;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.glowBlue,
+.glowPurple,
+.glowPink {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  opacity: 0.35;
+}
+
+.glowBlue {
+  width: 350px;
+  height: 350px;
+
+  left: -150px;
+  top: 10%;
+
+  background: rgba(76, 108, 255, 0.2);
+}
+
+.glowPurple {
+  width: 360px;
+  height: 360px;
+
+  right: -160px;
+  top: 30%;
+
+  background: rgba(169, 77, 255, 0.18);
+}
+
+.glowPink {
+  width: 220px;
+  height: 220px;
+
+  left: 45%;
+  bottom: -120px;
+
+  background: rgba(255, 86, 169, 0.13);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.17;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 54px 54px;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1180px, calc(100% - 72px));
+
+  height: calc(100svh - 64px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    0.9fr
+    1.1fr;
+
+  align-items: center;
+
+  gap: 55px;
+
+  padding: 20px 0;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro {
+  max-width: 520px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 9px;
+}
+
+.label span {
+  color: #8795ff;
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+.label i {
+  width: 28px;
+  height: 2px;
+
+  border-radius: 99px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6687ff,
+      #aa5cff
+    );
+}
+
+.label small {
+  color: rgba(166, 176, 201, 0.4);
+
+  font-size: 6px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.intro h1 {
+  margin: 0;
+
+  font-size: clamp(45px, 5.4vw, 76px);
+
+  line-height: 0.88;
+
+  letter-spacing: -0.07em;
+
+  font-weight: 900;
+}
+
+.intro h1 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7093ff,
+      #ac62ff,
+      #ff67a9
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.intro > p {
+  max-width: 450px;
+
+  margin: 14px 0 0;
+
+  color: rgba(183, 192, 215, 0.62);
+
+  font-size: 10px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   QUICK LINKS
+   ========================================================= */
+
+.quickLinks {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  max-width: 330px;
+
+  margin-top: 19px;
+}
+
+.quickLinks a {
+  min-height: 38px;
+
+  display: grid;
+
+  grid-template-columns:
+    27px
+    1fr
+    20px;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 0 9px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.07);
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: rgba(221, 225, 237, 0.72);
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.quickLinks a:hover {
+  transform: translateX(4px);
+
+  background: rgba(103, 112, 255, 0.08);
+}
+
+.quickLinks a span {
+  color: #8997ff;
+
+  font-size: 6px;
+
+  font-weight: 900;
+}
+
+.quickLinks a b {
+  justify-self: end;
+
+  color: #a66aff;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   LAUNCH PANEL
+   ========================================================= */
+
+.launchPanel {
+  min-height: 430px;
+
+  padding: 18px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(103, 122, 255, 0.09),
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.22);
+
+  backdrop-filter: blur(22px);
+
+  display: grid;
+
+  grid-template-rows:
+    auto
+    1fr
+    auto;
+}
+
+
+/* Panel top */
+
+.panelTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-bottom: 13px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.panelTop small {
+  display: block;
+
+  color: #8c99ff;
+
+  font-size: 6px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.4px;
+}
+
+.panelTop strong {
+  display: block;
+
+  margin-top: 4px;
+
+  font-size: 19px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -0.04em;
+}
+
+.panelTop > span {
+  color: rgba(165, 174, 198, 0.35);
+
+  font-size: 6px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   STEPS
+   ========================================================= */
+
+.steps {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 18px 0;
+}
+
+.step {
+  min-height: 86px;
+
+  display: grid;
+
+  grid-template-columns:
+    48px
+    1fr
+    30px;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 10px 12px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.065);
+
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.step:hover {
+  transform: translateX(5px);
+
+  border-color:
+    rgba(134, 122, 255, 0.3);
+
+  background:
+    rgba(109, 111, 255, 0.065);
+}
+
+.stepActive {
+  border-color:
+    rgba(132, 118, 255, 0.28);
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(88, 119, 255, 0.11),
+      rgba(171, 83, 255, 0.07)
+    );
+}
+
+.stepNumber {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(99, 128, 255, 0.2),
+      rgba(169, 86, 255, 0.13)
+    );
+
+  color: #a8b2ff;
+
+  font-size: 8px;
+
+  font-weight: 900;
+}
+
+.stepBody strong {
+  display: block;
+
+  font-size: 16px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -0.03em;
+}
+
+.stepBody p {
+  max-width: 390px;
+
+  margin: 5px 0 0;
+
+  color: rgba(170, 180, 204, 0.53);
+
+  font-size: 7px;
+
+  line-height: 1.45;
+}
+
+.stepArrow {
+  justify-self: end;
+
+  color: rgba(171, 125, 255, 0.65);
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   PANEL BOTTOM
+   ========================================================= */
+
+.launchBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding-top: 13px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.07);
+}
+
+.launchIdentity {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.launchIdentity > span {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #5d80ff,
+      #a35bff
+    );
+
+  font-size: 9px;
+
+  font-weight: 900;
+}
+
+.launchIdentity strong {
+  display: block;
+
+  font-size: 9px;
+
+  font-weight: 900;
+}
+
+.launchIdentity small {
+  display: block;
+
+  margin-top: 2px;
+
+  color: rgba(151, 161, 189, 0.4);
+
+  font-size: 4px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.9px;
+}
+
+.launchButton {
+  min-height: 38px;
+
+  padding: 0 14px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #5b7fff,
+      #a457ff
+    );
+
+  color: #ffffff;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 10px 28px rgba(101, 82, 255, 0.23);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.launchButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 35px rgba(107, 82, 255, 0.34);
+}
+
+.launchButton span {
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .content {
+    width: calc(100% - 42px);
+
+    gap: 30px;
+  }
+
+  .intro h1 {
+    font-size: 55px;
+  }
+
+  .launchPanel {
+    min-height: 390px;
+
+    padding: 14px;
+  }
+
+  .step {
+    min-height: 72px;
+
+    grid-template-columns:
+      40px
+      1fr
+      24px;
+
+    gap: 9px;
+
+    padding: 8px;
+  }
+
+  .stepNumber {
+    width: 37px;
+    height: 37px;
+  }
+
+  .stepBody strong {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .content {
+    width: calc(100% - 20px);
+
+    height: calc(100svh - 56px);
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    grid-template-rows: auto 1fr;
+
+    gap: 8px;
+
+    padding: 13px 0 9px;
+  }
+
+  .intro {
+    max-width: 100%;
+  }
+
+  .label {
+    margin-bottom: 5px;
+  }
+
+  .label span {
+    font-size: 5px;
+  }
+
+  .label small {
+    font-size: 5px;
+  }
+
+  .intro h1 {
+    font-size: clamp(30px, 8.5vw, 43px);
+
+    line-height: 0.9;
+  }
+
+  .intro > p {
+    margin-top: 6px;
+
+    font-size: 7px;
+
+    line-height: 1.3;
+  }
+
+  .quickLinks {
+    display: none;
+  }
+
+  .launchPanel {
+    min-height: 0;
+
+    padding: 9px;
+
+    border-radius: 12px;
+  }
+
+  .panelTop {
+    padding-bottom: 7px;
+  }
+
+  .panelTop small {
+    font-size: 4px;
+  }
+
+  .panelTop strong {
+    margin-top: 2px;
+
+    font-size: 13px;
+  }
+
+  .panelTop > span {
+    font-size: 4px;
+  }
+
+  .steps {
+    gap: 5px;
+
+    padding: 7px 0;
+  }
+
+  .step {
+    min-height: 0;
+
+    height: 100%;
+
+    grid-template-columns:
+      30px
+      1fr
+      18px;
+
+    gap: 6px;
+
+    padding: 6px 7px;
+
+    border-radius: 8px;
+  }
+
+  .stepNumber {
+    width: 27px;
+    height: 27px;
+
+    border-radius: 7px;
+
+    font-size: 6px;
+  }
+
+  .stepBody strong {
+    font-size: 9px;
+  }
+
+  .stepBody p {
+    margin-top: 3px;
+
+    font-size: 5px;
+
+    line-height: 1.25;
+  }
+
+  .stepArrow {
+    font-size: 11px;
+  }
+
+  .launchBottom {
+    padding-top: 7px;
+
+    gap: 7px;
+  }
+
+  .launchIdentity {
+    gap: 5px;
+  }
+
+  .launchIdentity > span {
+    width: 26px;
+    height: 26px;
+
+    border-radius: 6px;
+
+    font-size: 6px;
+  }
+
+  .launchIdentity strong {
+    font-size: 6px;
+  }
+
+  .launchIdentity small {
+    font-size: 3px;
+  }
+
+  .launchButton {
+    min-height: 27px;
+
+    padding: 0 8px;
+
+    gap: 4px;
+
+    border-radius: 6px;
+
+    font-size: 6px;
+  }
+
+  .launchButton span {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   SMALL ANDROID
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .content {
+    width: calc(100% - 16px);
+
+    padding-top: 10px;
+  }
+
+  .intro h1 {
+    font-size: 29px;
+  }
+
+  .intro > p {
+    font-size: 6px;
+  }
+
+  .stepBody p {
+    display: none;
+  }
+
+  .step {
+    min-height: 37px;
+  }
+
+  .launchButton {
+    min-height: 25px;
+
+    padding: 0 6px;
+
+    font-size: 5.5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .quickLinks a,
+  .step,
+  .launchButton {
+    transition: none;
+  }
+}

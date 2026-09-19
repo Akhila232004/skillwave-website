@@ -1,0 +1,1031 @@
+.page {
+  position: relative;
+
+  width: 100%;
+  height: 100svh;
+  min-height: 600px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(77, 106, 255, 0.16),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 86% 22%,
+      rgba(177, 74, 255, 0.13),
+      transparent 25%
+    ),
+    #070812;
+
+  color: #ffffff;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.glowOne,
+.glowTwo,
+.glowThree {
+  position: absolute;
+
+  border-radius: 999px;
+
+  filter: blur(70px);
+
+  opacity: 0.45;
+}
+
+.glowOne {
+  width: 260px;
+  height: 260px;
+
+  left: -100px;
+  top: 22%;
+
+  background: rgba(77, 112, 255, 0.2);
+}
+
+.glowTwo {
+  width: 300px;
+  height: 300px;
+
+  right: -130px;
+  top: 38%;
+
+  background: rgba(185, 75, 255, 0.18);
+}
+
+.glowThree {
+  width: 180px;
+  height: 180px;
+
+  left: 48%;
+  bottom: -90px;
+
+  background: rgba(255, 89, 168, 0.12);
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.035;
+
+  background-image:
+    radial-gradient(
+      rgba(255, 255, 255, 0.9) 0.5px,
+      transparent 0.5px
+    );
+
+  background-size: 5px 5px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+   ========================================================= */
+
+.content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1280px, calc(100% - 72px));
+  height: calc(100svh - 64px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-rows:
+    auto
+    minmax(0, 1fr)
+    auto;
+
+  gap: 12px;
+
+  padding: 24px 0 16px;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro {
+  max-width: 650px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 8px;
+}
+
+.eyebrow span {
+  color: #8793ff;
+
+  font-size: 8px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.eyebrow i {
+  width: 34px;
+  height: 2px;
+
+  border-radius: 99px;
+
+  background: linear-gradient(
+    90deg,
+    #607fff,
+    #b15cff
+  );
+}
+
+.intro h1 {
+  margin: 0;
+
+  font-size: clamp(38px, 4.2vw, 66px);
+  line-height: 0.92;
+
+  letter-spacing: -0.065em;
+  font-weight: 900;
+}
+
+.intro h1 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7294ff,
+      #b968ff,
+      #ff68aa
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.intro p {
+  max-width: 600px;
+
+  margin: 10px 0 0;
+
+  color: rgba(188, 195, 216, 0.68);
+
+  font-size: 11px;
+  line-height: 1.5;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   JOURNEY
+   ========================================================= */
+
+.journey {
+  position: relative;
+
+  min-height: 0;
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 0 4px;
+}
+
+.journeyLine {
+  position: absolute;
+
+  left: 8%;
+  right: 8%;
+
+  top: 50%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(94, 126, 255, 0.15),
+      rgba(145, 92, 255, 0.8),
+      rgba(255, 91, 169, 0.65),
+      rgba(66, 220, 160, 0.3)
+    );
+
+  transform: translateY(-50%);
+}
+
+.journeyLine::before,
+.journeyLine::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  transform: translateY(-50%);
+
+  background: #7891ff;
+
+  box-shadow:
+    0 0 18px rgba(108, 132, 255, 0.8);
+}
+
+.journeyLine::before {
+  left: 0;
+}
+
+.journeyLine::after {
+  right: 0;
+
+  background: #d06bff;
+}
+
+.journeyLine span {
+  position: absolute;
+
+  left: 25%;
+  right: 25%;
+
+  top: -1px;
+
+  height: 3px;
+
+  border-radius: 99px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #5f81ff,
+      #ae60ff,
+      #ff66a8
+    );
+
+  filter: blur(1px);
+}
+
+.step {
+  position: relative;
+
+  z-index: 2;
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+.stepMarker {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(113, 137, 255, 0.2),
+      rgba(177, 81, 255, 0.14)
+    );
+
+  border:
+    1px solid rgba(153, 155, 255, 0.35);
+
+  box-shadow:
+    0 0 0 6px rgba(7, 8, 18, 0.9),
+    0 0 35px rgba(105, 106, 255, 0.17);
+
+  backdrop-filter: blur(12px);
+}
+
+.stepMarker span {
+  font-size: 10px;
+
+  font-weight: 900;
+
+  color: #ffffff;
+}
+
+.stepContent {
+  width: 100%;
+
+  min-height: 150px;
+
+  padding: 13px 15px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.18);
+
+  backdrop-filter: blur(18px);
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease;
+}
+
+.step:hover .stepContent {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(145, 125, 255, 0.32);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(105, 118, 255, 0.1),
+      rgba(180, 82, 255, 0.05)
+    );
+}
+
+.stepTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stepTop small {
+  color: #8290ff;
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.2px;
+}
+
+.stepTop span {
+  color: rgba(255, 255, 255, 0.18);
+
+  font-size: 18px;
+
+  line-height: 1;
+
+  font-weight: 900;
+}
+
+.stepContent h2 {
+  margin: 8px 0 2px;
+
+  font-size: 25px;
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: -0.05em;
+}
+
+.stepContent strong {
+  display: block;
+
+  color: rgba(214, 219, 236, 0.66);
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1px;
+}
+
+.stepContent p {
+  margin: 9px 0 0;
+
+  color: rgba(175, 183, 207, 0.62);
+
+  font-size: 9px;
+  line-height: 1.45;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   BOTTOM LEARNING LOOP
+   ========================================================= */
+
+.bottomPanel {
+  min-height: 72px;
+
+  display: grid;
+
+  grid-template-columns: 100px 1fr auto;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 9px 13px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(91, 116, 255, 0.09),
+      rgba(174, 81, 255, 0.07),
+      rgba(255, 89, 168, 0.05)
+    );
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.2);
+
+  backdrop-filter: blur(20px);
+}
+
+
+/* Loop graphic */
+
+.loopVisual {
+  position: relative;
+
+  width: 82px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loopRing {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid rgba(124, 142, 255, 0.6);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(113, 127, 255, 0.18),
+      rgba(113, 127, 255, 0.02)
+    );
+
+  box-shadow:
+    0 0 25px rgba(102, 121, 255, 0.2);
+}
+
+.loopRing span {
+  font-size: 11px;
+
+  font-weight: 900;
+
+  letter-spacing: -0.05em;
+}
+
+.loopDot {
+  position: absolute;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 14px currentColor;
+}
+
+.loopDotOne {
+  top: 3px;
+  left: 17px;
+
+  color: #7291ff;
+
+  background: #7291ff;
+}
+
+.loopDotTwo {
+  right: 7px;
+  top: 22px;
+
+  color: #c067ff;
+
+  background: #c067ff;
+}
+
+.loopDotThree {
+  left: 19px;
+  bottom: 2px;
+
+  color: #ff6aa8;
+
+  background: #ff6aa8;
+}
+
+
+/* Bottom copy */
+
+.bottomCopy small {
+  color: rgba(151, 161, 191, 0.55);
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.4px;
+}
+
+.bottomCopy h3 {
+  margin: 4px 0 3px;
+
+  font-size: 19px;
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 900;
+}
+
+.bottomCopy h3 span {
+  margin-left: 5px;
+
+  color: #b66aff;
+}
+
+.bottomCopy p {
+  margin: 0;
+
+  color: rgba(174, 183, 205, 0.55);
+
+  font-size: 8px;
+}
+
+
+/* CTA */
+
+.startButton {
+  min-height: 37px;
+
+  padding: 0 14px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #587cff,
+      #9c58ff
+    );
+
+  color: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 10px 28px rgba(91, 85, 255, 0.2);
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.startButton:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 34px rgba(105, 85, 255, 0.34);
+}
+
+.startButton span {
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .content {
+    width: calc(100% - 42px);
+  }
+
+  .journey {
+    gap: 9px;
+  }
+
+  .stepContent {
+    padding: 11px;
+  }
+
+  .stepContent h2 {
+    font-size: 21px;
+  }
+
+  .stepContent p {
+    font-size: 8px;
+  }
+
+  .bottomPanel {
+    grid-template-columns: 75px 1fr auto;
+
+    gap: 10px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .page {
+    min-height: 100svh;
+  }
+
+  .content {
+    width: calc(100% - 24px);
+    height: calc(100svh - 56px);
+
+    padding: 15px 0 10px;
+
+    gap: 8px;
+  }
+
+  .intro {
+    max-width: 100%;
+  }
+
+  .eyebrow {
+    margin-bottom: 5px;
+  }
+
+  .eyebrow span {
+    font-size: 6px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .eyebrow i {
+    width: 24px;
+  }
+
+  .intro h1 {
+    font-size: clamp(31px, 9vw, 45px);
+
+    line-height: 0.91;
+  }
+
+  .intro p {
+    max-width: 100%;
+
+    margin-top: 6px;
+
+    font-size: 8px;
+    line-height: 1.35;
+  }
+
+  .journey {
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    grid-template-rows: 1fr 1fr;
+
+    gap: 7px;
+
+    padding: 0;
+  }
+
+  .journeyLine {
+    left: 25%;
+    right: 25%;
+
+    top: 50%;
+
+    width: 50%;
+    height: 50%;
+
+    transform: none;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(95, 128, 255, 0.6),
+        rgba(177, 86, 255, 0.7),
+        rgba(255, 99, 170, 0.5)
+      );
+  }
+
+  .journeyLine::before,
+  .journeyLine::after {
+    display: none;
+  }
+
+  .journeyLine span {
+    display: none;
+  }
+
+  .step {
+    gap: 5px;
+
+    align-items: stretch;
+  }
+
+  .stepMarker {
+    width: 30px;
+    height: 30px;
+
+    margin: 0 auto;
+
+    box-shadow:
+      0 0 0 4px rgba(7, 8, 18, 0.92),
+      0 0 20px rgba(105, 106, 255, 0.15);
+  }
+
+  .stepMarker span {
+    font-size: 7px;
+  }
+
+  .stepContent {
+    min-height: 0;
+
+    height: 100%;
+
+    padding: 8px 9px;
+
+    border-radius: 11px;
+  }
+
+  .stepTop small {
+    font-size: 5px;
+
+    letter-spacing: 0.9px;
+  }
+
+  .stepTop span {
+    font-size: 12px;
+  }
+
+  .stepContent h2 {
+    margin-top: 4px;
+
+    font-size: 17px;
+  }
+
+  .stepContent strong {
+    font-size: 6px;
+  }
+
+  .stepContent p {
+    margin-top: 5px;
+
+    font-size: 6.5px;
+
+    line-height: 1.35;
+  }
+
+  .bottomPanel {
+    min-height: 52px;
+
+    grid-template-columns: 45px 1fr auto;
+
+    gap: 7px;
+
+    padding: 6px 7px;
+
+    border-radius: 11px;
+  }
+
+  .loopVisual {
+    width: 40px;
+    height: 38px;
+  }
+
+  .loopRing {
+    width: 31px;
+    height: 31px;
+  }
+
+  .loopRing span {
+    font-size: 8px;
+  }
+
+  .loopDot {
+    width: 4px;
+    height: 4px;
+  }
+
+  .loopDotOne {
+    left: 7px;
+    top: 3px;
+  }
+
+  .loopDotTwo {
+    right: 1px;
+    top: 17px;
+  }
+
+  .loopDotThree {
+    left: 8px;
+    bottom: 2px;
+  }
+
+  .bottomCopy small {
+    font-size: 5px;
+
+    letter-spacing: 0.9px;
+  }
+
+  .bottomCopy h3 {
+    margin: 2px 0;
+
+    font-size: 12px;
+  }
+
+  .bottomCopy h3 span {
+    margin-left: 3px;
+  }
+
+  .bottomCopy p {
+    font-size: 5.5px;
+  }
+
+  .startButton {
+    min-height: 29px;
+
+    padding: 0 8px;
+
+    gap: 4px;
+
+    border-radius: 7px;
+
+    font-size: 6.5px;
+  }
+
+  .startButton span {
+    font-size: 10px;
+  }
+}
+
+
+/* =========================================================
+   SMALL ANDROID
+   ========================================================= */
+
+@media (max-width: 390px) {
+  .content {
+    width: calc(100% - 18px);
+
+    padding-top: 12px;
+  }
+
+  .intro h1 {
+    font-size: 29px;
+  }
+
+  .intro p {
+    font-size: 7px;
+  }
+
+  .journey {
+    gap: 5px;
+  }
+
+  .stepContent {
+    padding: 7px;
+  }
+
+  .stepContent h2 {
+    font-size: 15px;
+  }
+
+  .stepContent p {
+    font-size: 6px;
+  }
+
+  .bottomPanel {
+    grid-template-columns: 37px 1fr auto;
+
+    gap: 5px;
+
+    padding: 5px;
+  }
+
+  .loopVisual {
+    width: 35px;
+  }
+
+  .bottomCopy h3 {
+    font-size: 10px;
+  }
+
+  .bottomCopy p {
+    display: none;
+  }
+
+  .startButton {
+    min-height: 27px;
+
+    padding: 0 7px;
+
+    font-size: 6px;
+  }
+}
+
+
+/* =========================================================
+   VERY SHORT SCREENS
+   ========================================================= */
+
+@media (max-height: 680px) and (min-width: 761px) {
+  .content {
+    padding-top: 15px;
+  }
+
+  .intro h1 {
+    font-size: 50px;
+  }
+
+  .intro p {
+    margin-top: 6px;
+  }
+
+  .stepContent {
+    min-height: 125px;
+  }
+
+  .bottomPanel {
+    min-height: 62px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .stepContent,
+  .startButton {
+    transition: none;
+  }
+}
