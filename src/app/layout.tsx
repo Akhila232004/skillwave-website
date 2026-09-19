@@ -1,3 +1,4 @@
+import "@npmaccount990/project-workspace/styles.css";
 import type { Metadata } from "next";
 import "./globals.css";
 
